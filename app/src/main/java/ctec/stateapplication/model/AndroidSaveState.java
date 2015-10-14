@@ -6,7 +6,7 @@ import android.app.Application;
  * @author Adam Kinzer
  * @version 1.1 10/14/2015
  */
-public class AndroidSaveState
+public class AndroidSaveState extends Application
 {
     private String userName;
     private int age;
@@ -14,12 +14,12 @@ public class AndroidSaveState
 
     public AndroidSaveState()
     {
-        username = "default";
+        userName = "default";
         age = -0;
         isTired = false;
     }
 
-    public String getUsername()
+    public String getUserName()
     {
         return userName;
     }
@@ -34,7 +34,7 @@ public class AndroidSaveState
         return isTired;
     }
 
-    public void setUsername(String userName)
+    public void setUserName(String userName)
     {
         this.userName = userName;
     }

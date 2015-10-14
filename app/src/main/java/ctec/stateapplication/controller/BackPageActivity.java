@@ -9,10 +9,14 @@ import android.widget.TextView;
 import android.content.Intent;
 import android.view.View;
 
+import ctec.stateapplication.model.AndroidSaveState;
+
 public class BackPageActivity extends Activity {
 
     private TextView userText;
     private Button backButton;
+
+    private AndroidSaveState saveState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -20,10 +24,19 @@ public class BackPageActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_back_page);
 
+        saveState = (AndroidSaveState) getApplication();
         backButton = (Button) findViewById(R.id.backButton);
         userText = (TextView) findViewById(R.id.userText);
 
+        loadContent();
+
         setupListeners();
+    }
+
+    private void loadContent()
+    {
+        userText.setText( saveState.getUserName() + " is " + saveState.getAge()
+                + " years old " + " and her/his tired setting is " + saveState.getIsTired());
     }
 
     @Override
