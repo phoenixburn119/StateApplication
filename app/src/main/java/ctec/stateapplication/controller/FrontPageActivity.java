@@ -52,6 +52,9 @@ public class FrontPageActivity extends Activity
         saveState.setIsTired(isTired);
     }
 
+    /**
+     * Listens for click and moves onto next page.
+     */
     private void setupListeners()
     {
         nextScreenButton.setOnClickListener(new View.OnClickListener()

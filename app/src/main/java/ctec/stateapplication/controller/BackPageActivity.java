@@ -33,6 +33,9 @@ public class BackPageActivity extends Activity {
         setupListeners();
     }
 
+    /**
+     * Loads the content from the last saved state.
+     */
     private void loadContent()
     {
         userText.setText( saveState.getUserName() + " is " + saveState.getAge()
@@ -61,6 +64,9 @@ public class BackPageActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Setups the listeners for the next page.
+     */
     private void setupListeners()
     {
         backButton.setOnClickListener(new View.OnClickListener()
